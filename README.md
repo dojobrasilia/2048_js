@@ -1,9 +1,16 @@
-Presentes: Fabs, Fernando e Delfino.
+Presentes: 
+==============
+* Fabs
+* Fernando
+* Delfino.
+
 :)
-	- Voltar com o Dojo.
-	- Codar jogo é sempre legal.
-	- Muito refactoring.
-	
+==============
+* Voltar com o Dojo.
+* Codar jogo é sempre legal.
+* Muito refactoring.
+
 :(
-	- Horário ruim.
-	- Muita gente faltou.
+=============
+* Horário ruim.
+* Muita gente faltou.
