@@ -12,7 +12,8 @@ describe("2048", function() {
   });
 
   it("initializes the game with two occupied positions", function() {
-    var randomPos = [2,2,0,3];
+    var half = 0.57893678;
+    var randomPos = [half,half,half,half,0/4,3.0/4];
     var i = 0;
     Math.random = function() {
       return randomPos[i++];
@@ -24,6 +25,66 @@ describe("2048", function() {
             [' ',' ',' ',' '],
             [' ',' ','2',' '],
             ['2',' ',' ',' ']]).toEqual(game.state());
+
+  });
+
+  it("move all numbers to the left", function() {
+    
+    var game = new Game( [[' ',' ',' ',' '],
+                          [' ',' ',' ',' '],
+                          [' ',' ','2',' '],
+                          ['2',' ',' ',' ']]);
+    game.moveLeft(); 
+
+    expect([[' ',' ',' ',' '],
+            [' ',' ',' ',' '],
+            ['2',' ',' ',' '],
+            ['2',' ',' ',' ']]).toEqual(game.state());
+
+  });
+
+  it("move all numbers to the right", function() {
+    
+    var game = new Game( [[' ',' ',' ',' '],
+                          [' ',' ',' ','2'],
+                          [' ',' ','2',' '],
+                          [' ',' ',' ',' ']]);
+    game.moveRight(); 
+
+    expect([[' ',' ',' ',' '],
+            [' ',' ',' ','2'],
+            [' ',' ',' ','2'],
+            [' ',' ',' ',' ']]).toEqual(game.state());
+
+  });
+
+  it("move all numbers to the top", function() {
+    
+    var game = new Game( [[' ','2',' ',' '],
+                          [' ',' ',' ',' '],
+                          [' ',' ','2',' '],
+                          [' ',' ',' ',' ']]);
+    game.moveUp(); 
+
+    expect([[' ','2','2',' '],
+            [' ',' ',' ',' '],
+            [' ',' ',' ',' '],
+            [' ',' ',' ',' ']]).toEqual(game.state());
+
+  });
+
+  it("move all numbers to the botton", function() {
+    
+    var game = new Game( [[' ','2',' ',' '],
+                          [' ',' ',' ',' '],
+                          [' ',' ',' ',' '],
+                          [' ',' ','2',' ']]);
+    game.moveDown(); 
+
+    expect([[' ',' ',' ',' '],
+            [' ',' ',' ',' '],
+            [' ',' ',' ',' '],
+            [' ','2','2',' ']]).toEqual(game.state());
 
   });
 });
